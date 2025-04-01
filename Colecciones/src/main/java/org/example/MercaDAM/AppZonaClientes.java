@@ -17,11 +17,13 @@ public class AppZonaClientes {
         System.out.println("\n*** COMPRA ONLINE DE MERCADAM ***");
         System.out.println();
         autenticar(clientes);
-        System.out.println("=========================");
-        System.out.print("\nElije un producto:");
-        String producto = scanner.next();
-        System.out.println("\n==========================");
 
+        boolean agregar = true;
+        while (agregar) {
+            System.out.println("==========================");
+            System.out.println("Elije un producto: ");
+
+        }
     }
 
     public static void autenticar(List<Cliente> clientes) {
