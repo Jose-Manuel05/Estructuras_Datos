@@ -3,6 +3,7 @@ package org.example.MercaDAM;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.InputMismatchException;
 import java.util.Objects;
 
 @Getter @Setter
@@ -30,12 +31,42 @@ public class Cliente {
     }
 
     public void insertarProducto(String producto) {
+        try {
+            Producto prod = Producto.valueOf(producto.toUpperCase());
 
+            System.out.print("¿Cuántas unidades quieres añadir? ");
+            int cantidad = 1;
+
+            try {
+                cantidad = AppZonaClientes.scanner.nextInt();
+                if (cantidad <= 0) {
+                    System.out.println("La cantidad debe ser mayor que cero. Se añadirá 1 unidad.");
+                    cantidad = 1;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Cantidad no válida. Se añadirá 1 unidad.");
+            }
+
+            if (this.pedido.getProductos().containsKey(prod)) {
+                int cantidadActual = this.pedido.getProductos().get(prod);
+                this.pedido.getProductos().put(prod, cantidadActual + cantidad);
+            } else {
+                this.pedido.getProductos().put(prod, cantidad);
+            }
+
+            System.out.println("Se han añadido " + cantidad + " unidades de " + producto.toUpperCase() + " correctamente!");
+        } catch (IllegalArgumentException e) {
+            System.out.println("ERROR: El producto no existe! Elije otro.");
+        }
     }
 
     public double importePedido() {
-
-        return 0;
+        double total = 0;
+        for (Producto p : this.pedido.getProductos().keySet()) {
+            int cantidad = this.pedido.getProductos().get(p);
+            total += p.getPrecio() * cantidad;
+        }
+        return total;
     }
 
     @Override
