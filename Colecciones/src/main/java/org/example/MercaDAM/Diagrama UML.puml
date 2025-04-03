@@ -1,0 +1,67 @@
+@startuml
+class AppZonaClientes {
+    - static Scanner scanner
+    - static Cliente cliente
+    + main(String[] args)
+    + autenticar(List<Cliente> clientes)
+    + procesarCompra()
+    + mostrarResumen()
+    + iniciarCompra()
+    + imprimirProductos()
+    + imprimirMenuPromos()
+    + imprimirDespedida()
+}
+
+class MercaDAM {
+    - static Set<Cliente> clientes
+    - static Random random
+    + MercaDAM()
+    + static void generarClientes()
+    + static String generarCadenaAleatoria()
+    + static Set<Cliente> getClientes()
+}
+
+class Cliente {
+    + String usuario
+    + String contrasenya
+    + Pedido pedido
+    + boolean promociones
+    + String direccion
+    + Cliente(String usuario, String contrasenya)
+    + void crearPedido()
+    + void insertarProducto(String producto)
+    + double importePedido()
+    + boolean equals(Object o)
+    + int hashCode()
+    + String toString()
+}
+
+class Producto {
+    + double precio
+    + MANZANAS(2.30)
+    + PAN(1.00)
+    + ARROZ(3.50)
+    + POLLO(4.30)
+    + LECHE(1.30)
+    + ACEITE(8.30)
+    + HUEVOS(3.30)
+    + TOMATES(4.00)
+    + PASTA(0.89)
+}
+
+class Pedido {
+    + HashMap<Producto, Integer> productos
+    + double importe_total
+    + Pedido()
+    + void aplicarPromo3x2()
+    + void aplicarPromo10()
+    + double calcularImporteTotal()
+    + String toString()
+}
+
+AppZonaClientes --> Cliente
+AppZonaClientes --> MercaDAM
+AppZonaClientes --> Pedido
+Cliente --> Pedido
+Pedido --> Producto
+@enduml

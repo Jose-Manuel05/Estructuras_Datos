@@ -17,11 +17,29 @@ public class Pedido {
     }
 
     public void aplicarPromo3x2() {
-
+        for (HashMap.Entry<Producto, Integer> entry : productos.entrySet()) {
+            int cantidad = entry.getValue();
+            if (cantidad >= 3) {
+                int gratis = cantidad / 3;
+                double descuento = gratis * entry.getKey().getPrecio();
+                this.importe_total -= descuento;
+            }
+        }
     }
 
     public void aplicarPromo10() {
+        this.importe_total *= 0.9;
+    }
 
+    public double calcularImporteTotal() {
+        double total = 0;
+        for (HashMap.Entry<Producto, Integer> entry : productos.entrySet()) {
+            Producto producto = entry.getKey();
+            int cantidad = entry.getValue();
+            total += producto.getPrecio() * cantidad;
+        }
+        this.importe_total = total;
+        return total;
     }
 
     @Override

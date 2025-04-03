@@ -16,17 +16,17 @@ public class MercaDAM {
 
     public static void generarClientes() {
         for (int i = 0; i < 1; i++) {
-            String usuario = generarCadenaAleatoria(8);
-            String contrasenya = generarCadenaAleatoria(8);
+            String usuario = generarCadenaAleatoria();
+            String contrasenya = generarCadenaAleatoria();
             Cliente cliente = new Cliente(usuario, contrasenya);
             clientes.add(cliente);
         }
     }
 
-    private static String generarCadenaAleatoria(int longitud) {
-        char[] cadena = new char[longitud];
+    private static String generarCadenaAleatoria() {
+        char[] cadena = new char[8];
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for (int i = 0; i < longitud; i++) {
+        for (int i = 0; i < 8; i++) {
             cadena[i] = caracteres.charAt(random.nextInt(caracteres.length()));
         }
         return new String(cadena);
