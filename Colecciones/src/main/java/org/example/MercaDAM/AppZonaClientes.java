@@ -40,7 +40,7 @@ public class AppZonaClientes {
             }
 
             if (!autenticado) {
-                System.out.println("El producto no existe! Elije otro.");
+                System.out.println("\nAlgo no coincide o no existe! Vuelve a intentarlo...\n");
                 intentos++;
             }
         } while (!autenticado && intentos < 3);
@@ -146,6 +146,6 @@ public class AppZonaClientes {
     }
 
     public static void imprimirDespedida() {
-        System.out.println("GRACIAS POR SU PEDIDO. Se lo mandaremos a la dirección " + cliente.getDireccion() + ".");
+        System.out.println("\nGRACIAS POR SU PEDIDO. Se lo mandaremos a la dirección " + cliente.getDireccion() + ".");
     }
 }

@@ -276,14 +276,16 @@ Pedido --> Producto
   
   - toString(): Devuelve una representación en cadena del pedido.
 
-
-
 ## Pruebas
+
+Video camino feliz:  [Enlace](https://youtu.be/ioS1DUXz4bk)
+
+Prueba Usuario: [Enlace](https://youtu.be/xJpcNj-vUyo)
+
+Prueba Pedidos: [Enlace](https://youtu.be/vpEt-IOrNGo)
 
 ## Entrega
 
-[  ] **Código Fuente** [Enlace a GitHub]: 
-
-[  ] **Vídeo demostrativo**: [Enlace a Vídeo]: 
+[  ] **Código Fuente** : [Enlace](https://github.com/Jose-Manuel05/Estructuras_Datos/tree/main/Colecciones/src/main/java/org/example/MercaDAM)
 
 @pbendom3
