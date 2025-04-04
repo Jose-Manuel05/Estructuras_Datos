@@ -280,9 +280,15 @@ Pedido --> Producto
 
 Video camino feliz:  [Enlace](https://youtu.be/ioS1DUXz4bk)
 
+- Video para mostrar que el programa funciona como debería
+
 Prueba Usuario: [Enlace](https://youtu.be/xJpcNj-vUyo)
 
+- En este video podemos comprobar que al fallar 3 veces el inicio de sesión nos saca del programa
+
 Prueba Pedidos: [Enlace](https://youtu.be/vpEt-IOrNGo)
+
+- Aquí podemos comprobar que si escribimos bien un producto y luego que poner algo que no esta en la lista nos mostrara un mensaje de error de que el producto no existe
 
 ## Entrega
 
